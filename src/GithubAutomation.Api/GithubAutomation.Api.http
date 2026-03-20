@@ -1,0 +1,6 @@
+@GithubAutomation.Api_HostAddress = http://localhost:5242
+
+GET {{GithubAutomation.Api_HostAddress}}/health
+Accept: application/json
+
+###
