@@ -12,11 +12,11 @@ public class ProdutoEndpointsTests : IDisposable
 {
     private readonly WebApplicationFactory<Program> _factory;
     private readonly HttpClient _client;
-    private readonly string _databaseName;
+    private readonly string _uniqueDatabaseName;
 
     public ProdutoEndpointsTests()
     {
-        _databaseName = "TestDb_" + Guid.NewGuid();
+        _uniqueDatabaseName = "TestDb_" + Guid.NewGuid();
         _factory = new WebApplicationFactory<Program>().WithWebHostBuilder(builder =>
         {
             builder.ConfigureServices(services =>
@@ -42,7 +42,7 @@ public class ProdutoEndpointsTests : IDisposable
 
                 // Add InMemory DbContext unique per test instance (new Guid per constructor call)
                 services.AddDbContext<AppDbContext>(options =>
-                    options.UseInMemoryDatabase(_databaseName));
+                    options.UseInMemoryDatabase(_uniqueDatabaseName));
             });
         });
         _client = _factory.CreateClient();

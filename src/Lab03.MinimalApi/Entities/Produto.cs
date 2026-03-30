@@ -8,6 +8,6 @@ public class Produto
     public decimal Preco { get; set; }
     public int Quantidade { get; set; }
     public bool Ativo { get; set; } = true;
-    public DateTime CriadoEm { get; set; } = DateTime.UtcNow;
+    public DateTime CriadoEm { get; set; }
     public DateTime? AtualizadoEm { get; set; }
 }
