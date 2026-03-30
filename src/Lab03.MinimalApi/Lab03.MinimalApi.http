@@ -1,0 +1,46 @@
+@Lab03.MinimalApi_HostAddress = http://localhost:5072
+
+GET {{Lab03.MinimalApi_HostAddress}}/api/produtos
+Accept: application/json
+
+###
+
+GET {{Lab03.MinimalApi_HostAddress}}/api/produtos/1
+Accept: application/json
+
+###
+
+POST {{Lab03.MinimalApi_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Produto Exemplo",
+  "descricao": "Descrição do produto",
+  "preco": 99.99,
+  "quantidade": 10,
+  "ativo": true
+}
+
+###
+
+PUT {{Lab03.MinimalApi_HostAddress}}/api/produtos/1
+Content-Type: application/json
+
+{
+  "nome": "Produto Atualizado",
+  "descricao": "Nova descrição",
+  "preco": 149.99,
+  "quantidade": 5,
+  "ativo": true
+}
+
+###
+
+DELETE {{Lab03.MinimalApi_HostAddress}}/api/produtos/1
+
+###
+
+GET {{Lab03.MinimalApi_HostAddress}}/health
+Accept: application/json
+
+###
