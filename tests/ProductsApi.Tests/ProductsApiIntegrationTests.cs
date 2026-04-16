@@ -30,6 +30,7 @@ public class ProductsApiIntegrationTests : IClassFixture<CustomWebApplicationFac
                 Assert.Equal("Notebook", product.Nome);
                 Assert.Equal("Notebook para trabalho e estudos", product.Descricao);
                 Assert.Equal(3500.00m, product.Preco);
+                Assert.True(product.Ativo);
             },
             product =>
             {
@@ -37,6 +38,7 @@ public class ProductsApiIntegrationTests : IClassFixture<CustomWebApplicationFac
                 Assert.Equal("Mouse", product.Nome);
                 Assert.Equal("Mouse sem fio ergonômico", product.Descricao);
                 Assert.Equal(99.90m, product.Preco);
+                Assert.True(product.Ativo);
             },
             product =>
             {
@@ -44,8 +46,9 @@ public class ProductsApiIntegrationTests : IClassFixture<CustomWebApplicationFac
                 Assert.Equal("Teclado", product.Nome);
                 Assert.Equal("Teclado mecânico ABNT2", product.Descricao);
                 Assert.Equal(199.90m, product.Preco);
+                Assert.True(product.Ativo);
             });
     }
 
-    private sealed record ProductResponse(int Id, string Nome, string Descricao, decimal Preco);
+    private sealed record ProductResponse(int Id, string Nome, string Descricao, decimal Preco, bool Ativo);
 }
