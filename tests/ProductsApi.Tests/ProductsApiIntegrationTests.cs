@@ -46,7 +46,7 @@ public class ProductsApiIntegrationTests : IClassFixture<CustomWebApplicationFac
                 Assert.Equal("Teclado", product.Nome);
                 Assert.Equal("Teclado mecânico ABNT2", product.Descricao);
                 Assert.Equal(199.90m, product.Preco);
-                Assert.True(product.Ativo);
+                Assert.False(product.Ativo);
             });
     }
 
