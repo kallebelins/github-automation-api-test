@@ -3,11 +3,11 @@ using System.Net.Http.Json;
 
 namespace ProductsApi.Tests;
 
-public class UnitTest1 : IClassFixture<CustomWebApplicationFactory>
+public class ProductsApiIntegrationTests : IClassFixture<CustomWebApplicationFactory>
 {
     private readonly HttpClient _client;
 
-    public UnitTest1(CustomWebApplicationFactory factory)
+    public ProductsApiIntegrationTests(CustomWebApplicationFactory factory)
     {
         _client = factory.CreateClient();
     }
